@@ -1,11 +1,11 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import SocialApp from './components/SocialApp'
 
 function App() {
 
   return (
     <>
-      <Navbar />
+      <SocialApp />
     </>
   )
 }
