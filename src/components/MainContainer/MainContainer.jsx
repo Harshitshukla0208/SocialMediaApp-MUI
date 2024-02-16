@@ -3,22 +3,29 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Unstable_Grid2';
 import Box from '@mui/material/Box';
 import PostCardList from '../PostCardList/PostCardList';
-import UserList from '../UserList/UserList'
+import UserList from '../UserList/UserList';
 
+const StyledGridContainer = styled(Box)(({ theme }) => ({
+    marginTop: theme.spacing(6), // Adjust top margin
+}));
+
+const StyledGridItem = styled(Grid)(({ theme }) => ({
+    // Add custom styles here
+}));
 
 export default function RowAndColumnSpacing() {
     return (
-        <Box display="flex" justifyContent= "space-around" sx={{ width: '100%', mt: '3rem' }}>
-            <Grid container alignItems="start" justifyContent="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid md={6}>
+        <StyledGridContainer>
+            <Grid container alignItems="start" justifyContent="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
+                <StyledGridItem>
                     {/* users */}
                     <UserList />
-                </Grid>
-                <Grid container alignItems="center" justifyContent="center" direction="column" md={6}>
+                </StyledGridItem>
+                <StyledGridItem container alignItems="center" justifyContent="center" direction="column" md={8}>
                     {/* posts */}
                     <PostCardList />
-                </Grid>
+                </StyledGridItem>
             </Grid>
-        </Box>
+        </StyledGridContainer>
     );
 }
