@@ -6,11 +6,14 @@ import CardActions from '@mui/material/CardActions';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red, grey } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
+import { useState } from 'react';
 
 export default function PostCard({ authorFirstName, image, content }) {
+    const [isLiked, setIsLiked] = useState(false)
     return (
         <Card sx={{
             width: 345, // Set the width of the card
@@ -47,7 +50,9 @@ export default function PostCard({ authorFirstName, image, content }) {
             </CardContent>
             <CardActions disableSpacing sx={{ paddingTop: 0 }}>
                 <IconButton aria-label="add to favorites">
-                    <FavoriteBorderIcon />
+                    {
+                        (isLiked) ? <FavoriteIcon onClick={() => setIsLiked(!isLiked)} /> : <FavoriteBorderIcon onClick={() => setIsLiked(!isLiked)} />
+                    }
                 </IconButton>
                 <IconButton aria-label="share">
                     <ShareIcon />
