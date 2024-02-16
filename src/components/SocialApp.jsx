@@ -1,10 +1,10 @@
 import Navbar from './Navbar'
-import Card from './PostsCard'
+import MainContainer from './MainContainer/MainContainer'
 function SocialApp(){
     return (
         <>
             <Navbar />
-            <Card />
+            <MainContainer />
         </>
         
     )
