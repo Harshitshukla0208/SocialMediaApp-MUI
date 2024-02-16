@@ -9,14 +9,14 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-export default function PostCard() {
+export default function PostCard({authorFirstName, image, content}) {
 
     return (
         <Card sx={{ maxWidth: 345 }}>
         <CardHeader
             avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                R
+                {authorFirstName.substring(0,1)}
             </Avatar>
             }
             
@@ -26,14 +26,12 @@ export default function PostCard() {
         <CardMedia
             component="img"
             height="194"
-            image="https://th.bing.com/th/id/OIP.pvGxN8plGjH_2QPSPP31TAHaE8?w=276&h=184&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+            image={image}
             alt="Paella dish"
         />
         <CardContent>
             <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to cook
-            together with your guests. Add 1 cup of frozen peas along with the mussels,
-            if you like.
+            {content}
             </Typography>
         </CardContent>
         <CardActions disableSpacing>

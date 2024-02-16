@@ -3,7 +3,8 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Unstable_Grid2';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import PostCard from '../PostsCard';
+//import PostCard from '../PostsCard';
+import PostCardList from '../PostCardList/PostCardList';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -23,10 +24,7 @@ export default function RowAndColumnSpacing() {
                 </Grid>
                 <Grid container alignItems="center" justifyContent="center" direction="column" xs={12} md={9}>
                     {/* posts */}
-                    <PostCard />
-                    <PostCard />
-                    <PostCard />
-                    <PostCard />
+                    <PostCardList />
                 </Grid>
             </Grid>
         </Box>
