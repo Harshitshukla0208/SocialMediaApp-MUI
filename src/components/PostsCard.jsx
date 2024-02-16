@@ -33,7 +33,7 @@ export default function PostCard({ authorFirstName, image, content }) {
                         {authorFirstName.substring(0, 1)}
                     </Avatar>
                 }
-                title="Shrimp and Chorizo Paella"
+                title={authorFirstName}
                 subheader="September 14, 2016"
                 sx={{ paddingBottom: 0 }}
             />
@@ -49,9 +49,9 @@ export default function PostCard({ authorFirstName, image, content }) {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing sx={{ paddingTop: 0 }}>
-                <IconButton aria-label="add to favorites">
+                <IconButton aria-label="add to favorites"  onClick={() => setIsLiked(!isLiked)}>
                     {
-                        (isLiked) ? <FavoriteIcon onClick={() => setIsLiked(!isLiked)} /> : <FavoriteBorderIcon onClick={() => setIsLiked(!isLiked)} />
+                        (isLiked) ? <FavoriteIcon sx={{color: red[500]}} /> : <FavoriteBorderIcon />
                     }
                 </IconButton>
                 <IconButton aria-label="share">
