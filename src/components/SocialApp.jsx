@@ -1,4 +1,3 @@
-import Navbar from './Navbar'
 import MainContainer from './MainContainer/MainContainer'
 import Input from './Input/Input'
 import PostsCardContext from './providers/PostsProvider'
@@ -21,7 +20,7 @@ function SocialApp(){
 
     return (
         <PostsCardContext.Provider value={{posts, setPosts}}>
-            <Navbar />
+            
             <Input />
             <MainContainer />
         </PostsCardContext.Provider>
