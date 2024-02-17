@@ -1,12 +1,14 @@
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import PostCardContext from '../providers/PostsProvider'
 
 function Input(){
     const [postText, setPostText] = useState("");
     const [imgUrl, setImgUrl] = useState("");
+    const {posts, setPosts} = useContext(PostCardContext)
 
     async function createPost(){
         console.log("inside function")
@@ -23,6 +25,7 @@ function Input(){
         })
         .then(response => {
             console.log(response.data)
+            setPosts([...posts, response.data])
         })
     }
 
