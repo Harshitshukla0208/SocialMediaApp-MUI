@@ -36,7 +36,7 @@ export default function CheckboxListSecondary() {
                             },
                         }}
                     >
-                        <Link to={'/user/123'}>
+                        <Link to={`/user/${user.id}`}>
                             <ListItemButton sx={{ borderRadius: 'inherit' }}>
                                 <ListItemAvatar>
                                     <Avatar
